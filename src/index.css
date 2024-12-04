@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+svg {
+  display: inline !important;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hideOptions::before {
+  content: ' ';
+  background-color: #a5a0a0;
+  opacity: 0.2;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: not-allowed;
+  z-index: 10004;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9776a2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b3476ba6;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+.scenario_details td {
+  vertical-align: top !important;
+}
+
+.scenario_popup_height {
+  height: 120px !important;
+}
+
+.apply_only .ant-input::placeholder {
+  color: rgba(0, 0, 0, 0.65) !important;
+  font-size: 14px !important;
+}
