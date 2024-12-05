@@ -553,7 +553,35 @@ let filterOptions =
           "Name": "Centene Corporation"
       },
       
-  ],
+  ], 
+  "plandescriptionId": [
+    {
+        "Id": 1,
+        "Name": "Renewal Plan"
+    },
+    {
+        "Id": 2,
+        "Name": "Renewal Plan with SAR"
+    },
+    {
+        "Id": 3,
+        "Name": "Renewal Plan with SAE"
+    },
+    {
+        "Id": 4,
+        "Name": "New Plan"
+    },
+    {
+        "Id": 5,
+        "Name": "Initial Contract"
+        
+    },
+    {
+        "Id": 4,
+        "Name": "Consolidated Renewal Plan"
+        
+    },
+],
 
 }
 
@@ -576,6 +604,8 @@ let filterOptions =
             },
           },
         })
+
+        console.log("filterData 2",filterData)
         dispatch(setFilterValues(filterData?.data?.filterValues))
         dispatch(updateFilterOptions(filterData?.data?.options))
         dispatch(setDuplicateCounties(filterData?.data?.duplicateCounties))
@@ -588,6 +618,7 @@ let filterOptions =
 
   return (
     <div className="w-[200px] gap-y-1">
+        
       <div className="w-full h-5 flex items-center text-[#7D7D7D] uppercase font-semibold text-[11px]">{item.label}</div>
       {item.multiselect ? (
         <MultiSelect
@@ -610,6 +641,8 @@ let filterOptions =
       )
         : (
           <div className='relative'>
+            {console.log("filterOptions[item?.name]",filterOptions[item?.name])}
+            {console.log("filterOptions[item?.name]",filterValues?.[item?.name]?.selected)}
             <Dropdown
               filter
               options={filterOptions[item.name]}

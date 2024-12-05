@@ -51,8 +51,16 @@ const FiltersList = ({ clientId }) => {
         "label": "Organization",
         "name": "organizationId",
         "position": 7,
-        "multiselect": true,
-        "defaultId": "3,4,5,6,9,10,11,12"
+        "multiselect": false,
+        "defaultId": "3"
+    }
+    ,
+    {
+        "label": "Plan Description",
+        "name": "plandescriptionId",
+        "position": 8,
+        "multiselect": false,
+        "defaultId": "1"
     }
 ]
 

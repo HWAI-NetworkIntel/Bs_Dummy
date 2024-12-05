@@ -11,6 +11,7 @@ import CustomSpin from '../../../../../common/components/CustomSpin'
 import { dataScienceBenefits, dataScienceSaveFilter, dataScienceSimulationResult, saveSimulationResult } from '../../../api/request'
 import { getPayloadFormatStateCountyFromObj } from '../../../../planSelectionScreen/utils/planSelection'
 import { setCurrentIteration } from '../../../reducer/BenefitsSlice'
+import SimulationTrend from './SimulationTrend'
 
 const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenarioId, scenarioName, resultfromapi, changedBenefits }) => {
   const navigate = useNavigate()
@@ -69,7 +70,7 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
           </div>
         </div>
         <div className="flex justify-around gap-x-4 py-1 text-xs uppercase font-semibold text-[#7D7D7D] border-b border-[#7D7D7D]">
-          <p className="w-[127px]"> {RESULTS.bidId} </p>
+          <p className="w-[70px]"> {RESULTS.bidId} </p>
           <p className="w-[127px] text-right"> {RESULTS.preAep} </p>
           <p className="w-[127px] text-right">{RESULTS.postAep}</p>
           <p className="w-[127px] text-right">{RESULTS.simulatedPostAep}</p>
@@ -79,10 +80,11 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
           {data?.map(
             ({ bidId, postAEPEnrollment, simulatedResult, preAEPEnrollment, simulatedPostAEPDifference, simulatedPreAEPDifference }) => (
               <div className="h-9 flex justify-around gap-x-4 items-center border-b border-[#E9E8E8] text-[#333] text-sm">
-                <p className="w-[127px]">{bidId}</p>
+                <p className="w-[100px]">{bidId}</p>
                 <p className="w-[127px] text-right">{new Intl.NumberFormat('ja-JP').format(preAEPEnrollment)}</p>
                 <p className="w-[127px] text-right">{new Intl.NumberFormat('ja-JP').format(postAEPEnrollment)}</p>
-                <p className="w-[127px] text-right">{new Intl.NumberFormat('ja-JP').format(simulatedResult)}</p>
+                <p className="w-[150px] text-right">{new Intl.NumberFormat('ja-JP').format(simulatedResult)}<span className='px-1' style={{fontStyle:"italic",color:"#7e7878", fontSize:"12px"}}>(8724-9150)  <span className='pl-8'>84% confidence  </span></span></p>
+                
                 <p
                   className={`w-[127px] flex justify-end pr-2  items-center ${simulatedPostAEPDifference > 0 ? ' text-green-500' : 'text-red-500'
                     }`}
@@ -92,6 +94,9 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
               </div>
             )
           )}
+          <div>
+            <SimulationTrend/>SIGNIFICANT BENEFIT GROUPS
+          </div>
         </div>
         <div className="flex justify-end mt-3" style={{ gap: '10px' }}>
           <button

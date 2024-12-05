@@ -158,6 +158,7 @@ const AllScenarios = ({ item, email, ClientId, userid, card, setCard, userName }
             {statusIcon}
           </div>
           <ScenarioDetails action={action} userid={userid} item={item} ClientId={ClientId} email={email} isAllowed = {item?.CreatedBy === email} />
+          
           <div
             onClick={(event) => {
               event.stopPropagation()
@@ -166,6 +167,8 @@ const AllScenarios = ({ item, email, ClientId, userid, card, setCard, userName }
             ref={detailsIconButtonRef}
             style={{ cursor: 'pointer' }}
           >
+            {console.log("Scenariocard",setCard)}
+            
             <DetailsIcon userName={userName} card={card} item={item} setCard={setCard} userId={userid} email={email} clientId={ClientId} />
           </div>
         </div>

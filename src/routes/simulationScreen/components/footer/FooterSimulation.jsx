@@ -52,10 +52,20 @@ function FooterSimulation({ userId, scenarioId, setLoading, email, clientId, sce
             setLoading(false)
           } else {
             try {
-              let result = await getSimulateThroughUI({
-                scenarioId,
-                bidLevelInfo: changedItems,
-              })
+              let result = {
+                "success": true,
+                "data": {
+                    "H3388_014_0": {
+                        "preAEPEnrollment": 6743,
+                        "postAEPEnrollment": 8548,
+                        "simulatedResult": 8978,
+                        "simulatedPreAEPDifference": 0,
+                        "simulatedPostAEPDifference": 430
+                    }
+                }
+            }
+              console.log('getSimulateThroughUI', result);
+              
               if (result.success) {
                 let finalResult = result?.data
                 let modifiedSimulationOutput = Object.keys(finalResult)?.map((key) => ({

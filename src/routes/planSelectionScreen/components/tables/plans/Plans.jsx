@@ -42,7 +42,83 @@ const Plans = () => {
           planTypeId: filterValues['planTypeId'].selected,
           parentOrganizationId: organizationSelectedValues.toString(),
         }
-        let result = await getPlans(payload)
+        let result = {
+          "success": true,
+          "data": [
+              {
+                  "bidId": "H3388_014_0",
+                  "planName": "CDPHP $0 Medicare Rx (HMO)",
+                  "postAEPEnrollment": 8548,
+                  "preAEPEnrollment": 6743,
+                  "planCategoryId": 1,
+                  "planTypeId": 3,
+                  "premiumId": "2"
+              },
+              {
+                  "bidId": "H3388_013_0",
+                  "planName": "CDPHP Basic RX (HMO)",
+                  "postAEPEnrollment": 8264,
+                  "preAEPEnrollment": 7156,
+                  "planCategoryId": 1,
+                  "planTypeId": 3,
+                  "premiumId": "1"
+              },
+              {
+                  "bidId": "H3388_001_0",
+                  "planName": "CDPHP Choice (HMO)",
+                  "postAEPEnrollment": 336,
+                  "preAEPEnrollment": 344,
+                  "planCategoryId": 1,
+                  "planTypeId": 4,
+                  "premiumId": "1"
+              },
+              {
+                  "bidId": "H3388_002_0",
+                  "planName": "CDPHP Choice Rx (HMO)",
+                  "postAEPEnrollment": 9000,
+                  "preAEPEnrollment": 9077,
+                  "planCategoryId": 1,
+                  "planTypeId": 3,
+                  "premiumId": "1"
+              },
+              {
+                  "bidId": "H5042_012_0",
+                  "planName": "CDPHP Flex (PPO)",
+                  "postAEPEnrollment": 64,
+                  "preAEPEnrollment": 57,
+                  "planCategoryId": 1,
+                  "planTypeId": 6,
+                  "premiumId": "2"
+              },
+              {
+                  "bidId": "H5042_011_0",
+                  "planName": "CDPHP Flex Rx (PPO)",
+                  "postAEPEnrollment": 3357,
+                  "preAEPEnrollment": 3008,
+                  "planCategoryId": 1,
+                  "planTypeId": 5,
+                  "premiumId": "1"
+              },
+              {
+                  "bidId": "H3388_004_0",
+                  "planName": "CDPHP Value Rx (HMO)",
+                  "postAEPEnrollment": 9160,
+                  "preAEPEnrollment": 9341,
+                  "planCategoryId": 1,
+                  "planTypeId": 3,
+                  "premiumId": "1"
+              },
+              {
+                  "bidId": "H5042_009_0",
+                  "planName": "CDPHP Vital Rx (PPO)",
+                  "postAEPEnrollment": 2872,
+                  "preAEPEnrollment": 2329,
+                  "planCategoryId": 1,
+                  "planTypeId": 5,
+                  "premiumId": "2"
+              }
+          ]
+      }
         let planDataAsPerBidId = {}
         result?.data?.forEach((ii, i) => {
           planDataAsPerBidId[ii.bidId] = { ...ii, data: {} }

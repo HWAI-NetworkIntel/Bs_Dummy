@@ -1,8 +1,0 @@
-.apply_only .p-multiselect {
-  width: 100px !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-}
-.apply_only .p-multiselect .p-multiselect-label {
-  padding: 5px !important;
-}

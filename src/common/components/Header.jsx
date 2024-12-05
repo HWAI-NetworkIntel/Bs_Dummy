@@ -65,30 +65,14 @@ const Header = ({ scenarioName, pageNo, userId, clientId }) => {
   return (
     <div className="w-full h-6 px-8 flex justify-between items-center border-y border-[#E9E8E8]">
       <div className="flex items-center">
-        <p
-          className="text-primary_hue_purple pt-[1px] text-[13px]"
-          style={{ cursor: pageNo === 1 ? '' : 'pointer', paddingLeft: pageNo === 1 ? '1px' : '' }}
-          onClick={() => {
-            if (pageNo === 3 || pageNo === 1) {
-              navigate('/benefit-simulator/scenario/' + userId, {
-                replace: true,
-              })
-            } else {
-              handleBack()
-            }
-          }}
-        >
-          All Scenarios
-        </p>
+        
         {pageNo === 2 && (
           <>
-            <HomeNext />
             <p className="text-[#5C5C5C] pt-[1px] text-[13px]">Select Plans</p>
           </>
         )}
         {pageNo === 3 && (
           <>
-            <HomeNext />
             <p
               className="text-primary_hue_purple pt-[1px] text-[13px] cursor-pointer"
               onClick={() => {

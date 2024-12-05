@@ -48,6 +48,8 @@ export const multiSelectValue = (options, value) => {
 }
 
 export const getSelectedItemsLabel = (options, value) => {
+  console.log("getSelectedItemsLabel",options, value);
+  
   let selectedCount = options?.filter((obj) => value?.split(',')?.includes(`${obj?.Id}`))?.length || 0
   if (options?.length > 0 && selectedCount === options?.length) {
     return `All Selected`
