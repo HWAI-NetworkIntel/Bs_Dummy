@@ -10,7 +10,7 @@ const TableMain = () => {
         style={{ flex: '1 1 50%', boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.16)' }}
         className="w-full rounded border h-full relative border-[#E9E8E8] overflow-y-auto px-2"
       >
-        {/* <Organization /> */}
+        <Organization />
         <Plans />
       </div>
       <div
