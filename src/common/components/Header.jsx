@@ -63,12 +63,18 @@ const Header = ({ scenarioName, pageNo, userId, clientId }) => {
   }
   const navigate = useNavigate()
   return (
-    <div className="w-full h-6 px-8 flex justify-between items-center border-y border-[#E9E8E8]">
+    <div className="w-full h-6 px-1 flex justify-between items-center border-y border-[#E9E8E8]">
       <div className="flex items-center">
-        
+        <div className="w-[1302px] h-8 px-8 py-1 justify-between items-center inline-flex">
+          <div className="justify-start items-center gap-1 flex">
+            <div className="text-[#5c5c5c] text-base font-semibold font-['Roboto'] leading-normal tracking-wide">Benefit Simulator</div>
+          </div>
+          
+        </div>
+
         {pageNo === 2 && (
           <>
-            <p className="text-[#5C5C5C] pt-[1px] text-[13px]">Select Plans</p>
+            <p className="text-[#5C5C5C] pt-[1px] text-[13px]"></p>
           </>
         )}
         {pageNo === 3 && (

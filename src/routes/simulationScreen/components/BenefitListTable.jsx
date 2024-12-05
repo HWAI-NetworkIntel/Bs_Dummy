@@ -108,52 +108,70 @@ const BenefitListTable = () => {
           </Tooltip>
         </div>
         {console.log("modifiedBenefits",modifiedBenefits)}
-        {Object.keys(modifiedBenefits[selectedBidId] || {}).map((benefitName, index) => {
-  // Randomly assign a suffix
-  const suffix = Math.random() > 0.5 ? ' - Foundational' : ' - Utility';
+        {(() => {
+  const allBenefits = Object.keys(modifiedBenefits[selectedBidId] || {});
 
-  // Randomly determine if a gap should be added
-  const addGap = Math.random() > 0.5;
+  // Extract first 10 benefits for Foundational
+  const foundationalBenefits = allBenefits.slice(0, 10).map((benefitName) => ({
+    name: benefitName,
+    suffix: " - Foundational",
+  }));
 
-  return (
-    <React.Fragment key={benefitName}>
-      <button
-        type="button"
-        id={benefitName}
-        onClick={() => {
-          if (benefitVisible !== benefitName) {
-            if (benefitVisible) {
-              dispatch(setBenefitInfoBoxLoader(true));
-              dispatch(
-                setBenefitNameButtonClicked({
-                  clicked: !benefitNameButtonClicked.clicked,
-                  name: benefitName,
-                })
-              );
-            } else {
-              dispatch(setEmptyBenefitInfoBox(true));
-              dispatch(setBenefitVisible(benefitName));
+  // Remaining benefits for Utility
+  const utilityBenefits = allBenefits.slice(10).map((benefitName) => ({
+    name: benefitName,
+    suffix: " - Utility",
+  }));
+
+  // Combine Foundational and Utility benefits for display
+  const displayBenefits = [...foundationalBenefits, ...utilityBenefits];
+
+  return displayBenefits.map(({ name, suffix }) => {
+    const addGap = Math.random() > 0.5; // Random gap addition logic
+
+    return (
+      <React.Fragment key={name}>
+        <button
+          type="button"
+          id={name}
+          onClick={() => {
+            if (benefitVisible !== name) {
+              if (benefitVisible) {
+                dispatch(setBenefitInfoBoxLoader(true));
+                dispatch(
+                  setBenefitNameButtonClicked({
+                    clicked: !benefitNameButtonClicked.clicked,
+                    name,
+                  })
+                );
+              } else {
+                dispatch(setEmptyBenefitInfoBox(true));
+                dispatch(setBenefitVisible(name));
+              }
             }
-          }
-        }}
-        className={`h-9 w-full pl-2 flex gap-x-1 items-center justify-between text-[13px] text-[#333] border-b border-[#E9E8E8] ${benefitVisible === benefitName && 'bg-[#dbdbdb]'
+          }}
+          className={`h-9 w-full pl-2 flex gap-x-1 items-center justify-between text-[13px] text-[#333] border-b border-[#E9E8E8] ${
+            benefitVisible === name && "bg-[#dbdbdb]"
           }`}
-      >
-        <p
-          className={`flex text-left ${changedColorItems[selectedBidId]?.includes(benefitName) ? ' text-xs font-semibold' : ''
-            }`}
         >
-          {`${benefitName}${suffix}`} {/* Add the suffix */}
-        </p>
-        <div className="w-5">
-          <ForwardArrow />
-        </div>
-      </button>
-      {addGap && <div className="h-4" />} {/* Add a gap randomly */}
-    </React.Fragment>
-  );
-})}
-
+          <p
+            className={`flex text-left ${
+              changedColorItems[selectedBidId]?.includes(name)
+                ? "text-xs font-semibold"
+                : ""
+            }`}
+          >
+            {`${name}${suffix}`} {/* Add suffix */}
+          </p>
+          <div className="w-5">
+            <ForwardArrow />
+          </div>
+        </button>
+        {addGap && <div className="h-4" />} {/* Add a gap randomly */}
+      </React.Fragment>
+    );
+  });
+})()}
       </div>
       <div style={{ flex: '1 1 65%' }} className="w-full rounded-r h-full shadow-cards border-l-0 overflow-y-auto">
         <div className="h-9 w-full pl-2 gap-x-2 flex items-center text-xs font-semibold text-[#7D7D7D] border-b border-[#E9E8E8] relative">

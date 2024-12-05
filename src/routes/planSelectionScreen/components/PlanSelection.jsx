@@ -37,11 +37,7 @@ const PlanSelection = ({ userId, clientId }) => {
   const handleData = async () => {
     dispatch(setLoading(true))
     try {
-      if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_SCENARIO_ID)) === null) {
-        // navigate('/benefit-simulator/scenario/' + userId, {
-        //   replace: true,
-        // })
-      } else {
+     
         let clientDetails = {
           "success": true,
           "currentIteration": 1,
@@ -201,15 +197,15 @@ const PlanSelection = ({ userId, clientId }) => {
             dispatch(setFilterOptions({})) // filter options
           }
         } else {
-          // navigate('/benefit-simulator/scenario/' + userId, {
+          // navigate('/benefit-simulator/plan-selection/' + userId, {
           //   replace: true,
           // })
           dispatch(setFiltersList([]))
           dispatch(setFilterValues([]))
         }
-      }
+      
     } catch (error) {
-      // navigate('/benefit-simulator/scenario/' + userId, {
+      // navigate('/benefit-simulator/plan-selection/' + userId, {
       //   replace: true,
       // })
       let error1 = error?.response?.data?.message
@@ -246,7 +242,7 @@ const PlanSelection = ({ userId, clientId }) => {
         <FiltersList clientId={clientId} />
         <div className="w-[100%] h-9 px-8  justify-start items-center gap-2 inline-flex">
           <div className="h-7 justify-between items-start flex">
-            <div className="h-7 justify-start items-start flex">
+            <div className="h-7 justify-start items-start flex" style={{width:"525px"}}>
               <div className="grow shrink basis-0 h-7 px-2 py-1 border border-[#dddddc] justify-between items-center flex">
                 <div className="text-[#dddddc] text-[13px] font-normal font-['Roboto'] leading-[18px] tracking-wide">
                   Search by Iteration Name
@@ -256,7 +252,7 @@ const PlanSelection = ({ userId, clientId }) => {
                   <div className="w-5 h-5 relative" />
                 </div>
               </div>
-              <div className="px-2 py-1 bg-white border border-[#dddddc] justify-center items-center gap-1 flex">
+              <div className="px-2 h-7 py-1 bg-white border border-[#dddddc] justify-center items-center gap-1 flex">
                 <div className="w-5 h-5 relative" />
                 <div className="text-[#5c276e] text-[13px] font-normal font-['Roboto'] leading-[18px] tracking-wide">Search</div>
               </div>
@@ -269,18 +265,8 @@ const PlanSelection = ({ userId, clientId }) => {
                 </div>
                 <div className="w-5 h-5 relative" />
               </div>
-              <div className="px-2 py-1 bg-white border border-[#fff] justify-center items-center gap-1 flex">
-                <div className="w-5 h-5 relative" />
-                <div className="justify-center items-center flex">
-                  <div className="text-[#fff] text-[13px] font-normal font-['Roboto'] leading-[18px] tracking-wide">Delete </div>
-                </div>
-              </div>
-              <div className="px-2 py-1 bg-white border border-[#fff] justify-center items-center gap-1 flex">
-                <div className="w-5 h-5 relative" />
-                <div className="justify-center items-center flex">
-                  <div className="text-[#fff] text-[13px] font-normal font-['Roboto'] leading-[18px] tracking-wide">Delete </div>
-                </div>
-              </div>
+              
+              
 
               <div className="px-2 py-1 bg-[#fff] justify-end items-center gap-1 flex">
                 <div className="w-5 h-5 relative" />
@@ -291,13 +277,7 @@ const PlanSelection = ({ userId, clientId }) => {
               
             </div>
             <div className="justify-start items-center gap-2 flex">
-              <div className="px-2 py-1 bg-white border border-[#fff] justify-center items-center gap-1 flex">
-                <div className="justify-center items-center flex">
-                  <div className="w-5 h-5 relative" />
-                  <div className="text-[#fff] text-[13px] font-normal font-['Roboto'] leading-[18px] tracking-wide"> </div>
-                </div>
-                <div className="w-5 h-5 relative" />
-              </div>
+              
               <div>
                 <button
                   className="flex justify-center items-center gap-x-1 w-[166px] h-[32px] border border-[#5C276E] text-sm text-[#FFF] bg-[#5C276E] tracking-[0.7px] leading-[18px]"
@@ -315,7 +295,7 @@ const PlanSelection = ({ userId, clientId }) => {
               </div>
              
             </div>
-            <div className="justify-start items-center gap-2 flex cursor-pointer " style={{ paddingLeft: '80px' }}>
+            <div className="justify-start items-center gap-2 flex cursor-pointer " style={{ paddingLeft: '4%' }}>
               <div className="px-2 py-1 bg-white border border-[#dddddc] justify-center items-center gap-1 flex">
                 <div className="justify-center items-center flex">
                   <div className="w-5 h-5 relative" />
@@ -349,7 +329,7 @@ const PlanSelection = ({ userId, clientId }) => {
         </div>
         <TableMain />
       </div>
-      <FooterPlanSelection scenarioId={JSON.parse(localStorage.getItem(LOCAL_STORAGE_SCENARIO_ID))} clientId={clientId} userId={userId} />
+      <FooterPlanSelection scenarioId={665} clientId={clientId} userId={userId} />
     </div>
   )
 }

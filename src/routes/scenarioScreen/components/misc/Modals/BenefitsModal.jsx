@@ -131,7 +131,6 @@ const BenefitsModal = ({ blockButton, ModalOpen, setModalOpen, handleOnSave }) =
         <thead>
           <tr className="bg-gray-100">
             <th className="border border-gray-300 font-['Roboto'] px-4 py-2 text-[#5C5C5C] text-left">Benefit Group</th>
-            <th className="border border-gray-300 font-['Roboto'] px-4 py-2 text-[#5C5C5C] text-left">Benefit Description</th>
            
           
             
@@ -147,7 +146,6 @@ const BenefitsModal = ({ blockButton, ModalOpen, setModalOpen, handleOnSave }) =
                 subBenefit.items.map((item, index) => (
                   <tr key={`${benefitKey}-${index}`} className="hover:bg-gray-50">
                     <td className="border border-gray-300 px-4 py-2 font-['Roboto']">{item.benefitGroup}</td>
-                    <td className="border border-gray-300 px-4 py-2 font-['Roboto']">{item.benefitDescription}</td>
                    
                     
                   </tr>

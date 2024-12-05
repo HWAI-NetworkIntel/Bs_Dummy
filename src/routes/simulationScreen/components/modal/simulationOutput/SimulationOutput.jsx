@@ -104,7 +104,7 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
               if (resimulate) {
                 handleResimulate()
               } else {
-                // navigate('/benefit-simulator/scenario/' + userId, {
+                // navigate('/benefit-simulator/plan-selection/' + userId, {
                 //   replace: true,
                 // })
                 setLoading(false)
@@ -128,7 +128,7 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
                 let saveResult = await saveSimulationResult(obj1)
                 setLoading(true)
                 if (saveResult?.success) {
-                  // navigate('/benefit-simulator/scenario/' + userId, {
+                  // navigate('/benefit-simulator/plan-selection/' + userId, {
                   //   replace: true,
                   // })
                 } else {

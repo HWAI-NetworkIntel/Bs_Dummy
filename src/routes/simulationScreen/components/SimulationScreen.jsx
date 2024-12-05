@@ -18511,13 +18511,13 @@ const SimulationScreen = ({ userId, clientId, userEmail }) => {
           setLoading(false)
         }
       } else {
-        // navigate('/benefit-simulator/scenario/' + userId, {
+        // navigate('/benefit-simulator/plan-selection/' + userId, {
         //   replace: true,
         // })
         setLoading(false)
       }
     } catch (error) {
-      // navigate('/benefit-simulator/scenario/' + userId, {
+      // navigate('/benefit-simulator/plan-selection/' + userId, {
       //   replace: true,
       // })
       setLoading(false)
@@ -18539,7 +18539,7 @@ const SimulationScreen = ({ userId, clientId, userEmail }) => {
       </div>
       <FooterSimulation
         scenarioName={scenarioName}
-        scenarioId={JSON.parse(localStorage.getItem(LOCAL_STORAGE_SCENARIO_ID))}
+        scenarioId={665}
         clientId={clientId}
         userId={userId}
         setLoading={setLoading}

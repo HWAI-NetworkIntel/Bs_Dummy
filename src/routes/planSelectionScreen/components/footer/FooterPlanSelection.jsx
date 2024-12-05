@@ -78,7 +78,7 @@ function FooterPlanSelection({ scenarioId, userId, clientId }) {
       payload.orgPlan['planId'] = requiredObjForPayload
       let result = await saveFilters(payload)
       if (result.success) {
-        // navigate('/benefit-simulator/scenario/' + userId, {
+        // navigate('/benefit-simulator/plan-selection/' + userId, {
         //   replace: true,
         // })
       } else {

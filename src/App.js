@@ -38,7 +38,7 @@ function App() {
       if (!result?.firstName?.length) {
         openNotification('Access Denied', 'error')
       } else {
-        // setlandingURL('/benefit-simulator/scenario/' + userid)
+        // setlandingURL('/benefit-simulator/plan-selection/' + userid)
         setplanSelectionURL('/benefit-simulator/plan-selection/' + userid)
         setsimulationURL('/benefit-simulator/simulation/' + userid)
       }
