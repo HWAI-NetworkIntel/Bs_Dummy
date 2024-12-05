@@ -51,10 +51,10 @@ function App() {
         <div className="w-full">
           <BrowserRouter>
             <Routes>
-              <Route
+              {/* <Route
                 path={landingURL}
                 element={<ScenarioScreen userName={userName} ClientId={ClientId} userid={userID} userEmail={userEmail} />}
-              />
+              /> */}
               <Route
                 path={planSelectionURL}
                 element={<PlanSelection userName={userName} clientId={ClientId} userId={userID} userEmail={userEmail} />}
