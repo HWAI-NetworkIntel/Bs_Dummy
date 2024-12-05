@@ -18511,15 +18511,15 @@ const SimulationScreen = ({ userId, clientId, userEmail }) => {
           setLoading(false)
         }
       } else {
-        navigate('/benefit-simulator/scenario/' + userId, {
-          replace: true,
-        })
+        // navigate('/benefit-simulator/scenario/' + userId, {
+        //   replace: true,
+        // })
         setLoading(false)
       }
     } catch (error) {
-      navigate('/benefit-simulator/scenario/' + userId, {
-        replace: true,
-      })
+      // navigate('/benefit-simulator/scenario/' + userId, {
+      //   replace: true,
+      // })
       setLoading(false)
     }
   }

@@ -38,9 +38,9 @@ const PlanSelection = ({ userId, clientId }) => {
     dispatch(setLoading(true))
     try {
       if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_SCENARIO_ID)) === null) {
-        navigate('/benefit-simulator/scenario/' + userId, {
-          replace: true,
-        })
+        // navigate('/benefit-simulator/scenario/' + userId, {
+        //   replace: true,
+        // })
       } else {
         let clientDetails = {
           "success": true,
@@ -201,17 +201,17 @@ const PlanSelection = ({ userId, clientId }) => {
             dispatch(setFilterOptions({})) // filter options
           }
         } else {
-          navigate('/benefit-simulator/scenario/' + userId, {
-            replace: true,
-          })
+          // navigate('/benefit-simulator/scenario/' + userId, {
+          //   replace: true,
+          // })
           dispatch(setFiltersList([]))
           dispatch(setFilterValues([]))
         }
       }
     } catch (error) {
-      navigate('/benefit-simulator/scenario/' + userId, {
-        replace: true,
-      })
+      // navigate('/benefit-simulator/scenario/' + userId, {
+      //   replace: true,
+      // })
       let error1 = error?.response?.data?.message
       if (error1 === 'scenarioId not found') {
         error1 = "Scenario doesn't exist!"

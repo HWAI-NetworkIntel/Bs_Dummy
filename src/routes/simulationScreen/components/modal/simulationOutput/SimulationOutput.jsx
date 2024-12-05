@@ -104,9 +104,9 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
               if (resimulate) {
                 handleResimulate()
               } else {
-                navigate('/benefit-simulator/scenario/' + userId, {
-                  replace: true,
-                })
+                // navigate('/benefit-simulator/scenario/' + userId, {
+                //   replace: true,
+                // })
                 setLoading(false)
               }
             }}
@@ -128,9 +128,9 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
                 let saveResult = await saveSimulationResult(obj1)
                 setLoading(true)
                 if (saveResult?.success) {
-                  navigate('/benefit-simulator/scenario/' + userId, {
-                    replace: true,
-                  })
+                  // navigate('/benefit-simulator/scenario/' + userId, {
+                  //   replace: true,
+                  // })
                 } else {
                   openNotification('Failed To Save Simulation', 'error')
                 }
