@@ -28,7 +28,11 @@ const SimulationTrend = () => {
     },
   };
 
-  return <Line {...config} />;
+  return (
+    <div style={{ height: "300px" }}>
+      <Line {...config} />
+    </div>
+  );
 };
 
 export default SimulationTrend;

@@ -61,7 +61,7 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
     dataScienceSaveFilter(obj3)
   }
   return (
-    <Modal open={open} className="p-6" footer={null} width={920} centered closable={false}>
+    <Modal open={open} className="p-6" footer={null} width={1000} centered closable={false}>
       <div className="w-full h-full relative">
         {loading && <CustomSpin size={'large'} />}
         <div className="w-full flex justify-between items-center pb-1 border-b border-[#E9E8E8]">
@@ -95,7 +95,7 @@ const SimulationOutput = ({ userId, open, setOpen, data, email, clientId, scenar
             )
           )}
           <div>
-            <SimulationTrend/>SIGNIFICANT BENEFIT GROUPS
+            <SimulationTrend/>
           </div>
         </div>
         <div className="flex justify-end mt-3" style={{ gap: '10px' }}>
